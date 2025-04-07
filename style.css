@@ -51,8 +51,13 @@ body {
 
 .book {
   position: relative;
-  width: 350px;
+  width: 1440px;
   height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  transition: transform 0.5s ease;
 }
 
 .paper {
@@ -68,7 +73,7 @@ body {
 .back {
   background-color: white;
   position: absolute;
-  width: 100%;
+  width: 50%;
   height: 100%;
   top: 0;
   left: 0;
