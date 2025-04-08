@@ -1,94 +1,74 @@
-// References to DOM Elements
-const prevBtn = document.querySelector("#prev-btn");
-const nextBtn = document.querySelector("#next-btn");
-const book = document.querySelector("#book");
+document.addEventListener('DOMContentLoaded', function () {
+    let currentPage = 0;
+    const pages = [
+        document.getElementById('page0'),
+        document.getElementById('page1'),
+        document.getElementById('page2'),
+        document.getElementById('page3'),
+        document.getElementById('page4'),
+        document.getElementById('page5'),
+        document.getElementById('page6'),
+        document.getElementById('page7'),
+        document.getElementById('page8')
+    ];
 
-const paper1 = document.querySelector("#p1");
-const paper2 = document.querySelector("#p2");
-const paper3 = document.querySelector("#p3");
-const paper4 = document.querySelector("#p4");
-
-// Event Listener
-prevBtn.addEventListener("click", goPrevPage);
-nextBtn.addEventListener("click", goNextPage);
-
-// Business Logic
-let currentLocation = 1;
-let numOfPapers = 4;
-let maxLocation = numOfPapers + 1;
-
-function openBook() {
-    book.style.transform = "translateX(50%)";
-    prevBtn.style.transform = "translateX(0px)";
-    nextBtn.style.transform = "translateX(0px)";
-}
-
-function closeBook(isAtBeginning) {
-    if(isAtBeginning) {
-        book.style.transform = "translateX(0%)";
-    } else {
-        book.style.transform = "translateX(100%)";
-    }
     
-    prevBtn.style.transform = "translateX(0px)";
-    nextBtn.style.transform = "translateX(0px)";
-}
-
-function goNextPage() {
-    if(currentLocation < maxLocation) {
-        switch(currentLocation) {
-            case 1:
-                openBook();
-                paper1.classList.add("flipped");
-                paper1.style.zIndex = 1;
-                break;
-            case 2:
-                paper2.classList.add("flipped");
-                paper2.style.zIndex = 2;
-                break;
-            case 3:
-                paper3.classList.add("flipped");
-                paper3.style.zIndex = 3;
-                break;
-            case 4:
-                paper4.classList.add("flipped");
-                paper4.style.zIndex = 4;
-                closeBook(false);
-                break;
-            default:
-                throw new Error("unkown state");
+    function updateNavButtons() {
+        const centerPage = document.getElementsByClassName('flipbook')[0];;
+        const prev = document.getElementById('prev'); 
+        const next = document.getElementById('next'); 
+        prev.style.display = currentPage === 0 ? 'none' : 'inline-block';
+        next.style.display = currentPage === pages.length  ? 'none' : 'inline-block';
+        if (currentPage === 0 ) {
+            centerPage.style.translate = '25%';
+        } else if( currentPage === pages.length) {
+            centerPage.style.translate = '75%';
+        }else{
+            centerPage.style.translate = '50%';
         }
-        currentLocation++;
     }
-}
 
-function goPrevPage() {
-    if(currentLocation > 1) {
-        switch(currentLocation) {
-            case 2:
-                closeBook(true);
-                paper1.classList.remove("flipped");
-                paper1.style.zIndex = 4;
-                break;
-            case 3:
-                openBook();
-                paper2.classList.remove("flipped");
-                paper2.style.zIndex = 3;
-                break;
-            case 4:
-                openBook();
-                paper3.classList.remove("flipped");
-                paper3.style.zIndex = 2;
-                break;
-            case 5:
-                openBook();
-                paper4.classList.remove("flipped");
-                paper4.style.zIndex = 1;
-                break;
-            default:
-                throw new Error("unkown state");
+
+
+    document.getElementById('next').addEventListener('click', () => {
+        if (currentPage < pages.length) {
+            pages[currentPage].classList.add('flipped');
+            pages[currentPage].style.zIndex = 0;
+            currentPage++;
+            updateNavButtons();
         }
+    });
 
-        currentLocation--;
+    document.getElementById('prev').addEventListener('click', () => {
+        if (currentPage > 0) {
+            currentPage--;
+            pages[currentPage].classList.remove('flipped');
+            pages[currentPage].style.zIndex = pages.length - currentPage;
+            updateNavButtons();
+        }
+    });
+
+
+    // Prevent zooming
+    document.addEventListener('keydown', function (e) {
+        if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '0')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    document.addEventListener('touchmove', function (e) {
+        if (e.touches.length > 1) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    function counterZoom() {
+        const scale = 1 / (window.devicePixelRatio || 1);
+        document.getElementById('zoom-content').style.transform = `scale(${scale})`;
     }
-}
+
+    window.addEventListener('resize', counterZoom);
+    setInterval(counterZoom, 100);
+    counterZoom();
+});
