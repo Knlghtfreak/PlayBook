@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -86,8 +86,8 @@ body {
 /* page-1 */
 
 .home-page-body {
-  height: 45vw;
-  width: 50vw;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   background-color: #fff;
   display: flex;
@@ -97,10 +97,10 @@ body {
 .banner {
   margin: 0;
   padding: 0;
-  flex: 1;
+  /* flex: 1; */
   border: 0;
   overflow: hidden;
-  border-bottom: 20px solid #1a1a1a;
+  border-bottom: 10px solid #1a1a1a;
 }
 
 .banner img {
@@ -114,15 +114,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex: 1;
-  padding: 50px;
+  padding: 30px;
+}
+
+.info{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* padding: 30px; */
 }
 
 .logo-and-info {
   padding: 0;
   margin: 0;
   width: 100%;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo h1 {
@@ -278,7 +288,7 @@ body {
 .right-page-2 {
   background-color: rgb(255, 255, 255);
   /* width: calc(100% - 50%); */
-  height: 100%;
+  /* height: 80%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -288,22 +298,24 @@ body {
 
 .top-right-2 {
   width: 100%;
-  height: 100%;
-  flex: 1;
+  height: 500px;
+  /* flex: 1; */
 }
 
 .top-right-2 img {
   width: 100%;
-  height: 100%;
+  height: 500px;
   /* object-fit: cover; */
 }
 
 .bottom-right-2 {
   background-image: url(./Asset/Page-2/BG-Black.png);
   width: 100%;
-  flex: 1;
+  height: 100%;
+  /* flex: 1; */
   display: flex;
   justify-content: space-evenly;
+  padding: 30px;
   align-items: center;
 }
 
@@ -314,6 +326,7 @@ body {
 }
 
 .para-txt {
+  gap: 25px;
   display: flex;
   justify-content: space-evenly;
   align-content: center;
@@ -342,7 +355,8 @@ body {
 .top-page-2 {
   display: flex;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 20px;
   flex-direction: column;
   padding: 20px;
   margin: 0;
@@ -408,7 +422,8 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
   background-image: url(./Asset/Page-2/BG-Half-White.png);
 }
@@ -546,7 +561,8 @@ body {
 .right-txt-4 {
   background-image: url(./Asset/Page-2/BG-Half-White.png);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 20px;
   flex-direction: column;
   height: 100%;
   padding: 20px;
@@ -570,8 +586,8 @@ body {
 
 .bottom-page-4 {
   width: 100%;
-  height: 64%;
-  flex: 1;
+  height: 425px;
+  /* flex: 1; */
 }
 
 .bottom-page-4 img {
@@ -630,7 +646,10 @@ body {
   font-size: 14px;
   font-weight: 100;
 }
-
+.top-img-4{
+  width: 100%;
+  height: 500px;
+}
 .top-img-4 img {
   width: 100%;
   height: 100%;
@@ -672,7 +691,8 @@ body {
   height: 25%;
   align-content: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 20px;
   align-items: last baseline;
   flex-direction: column;
   flex: 1;
@@ -696,7 +716,7 @@ body {
 }
 
 .mid-page-img-5 {
-  height: 80%;
+  height: 75%;
   width: 100%;
   flex: 2;
   display: flex;
@@ -739,7 +759,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
 }
 
 .top-img-5 {
@@ -865,8 +885,9 @@ body {
   height: 100%;
   background-image: url(./Asset/Page-2/BG-Half-White.png);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: last baseline;
+  gap: 20px;
   flex-direction: column;
 }
 
@@ -945,11 +966,11 @@ body {
 }
 
 /* Show arrows on hover of the whole slider container */
-.page-5-slider-container:hover .arrow-left-5,
+/* .page-5-slider-container:hover .arrow-left-5,
 .page-5-slider-container:hover .arrow-right-5 {
   opacity: 1;
   pointer-events: auto;
-}
+} */
 
 /* Optional: Styling for the button wrapper (already provided, just cleaner) */
 .page-5-slider-container button {
@@ -1103,7 +1124,7 @@ body {
 
 .body-and-soul {
   width: 100%;
-  height: 45vw;
+  height: 100%;
   overflow: hidden;
   background-color: #fff;
   display: flex;
@@ -1148,7 +1169,8 @@ body {
   height: 100%;
   background-image: url(./Asset/Page-2/BG-Half-White.png);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 20px;
   align-items: last baseline;
   flex-direction: column;
   padding: 20px;
@@ -1191,8 +1213,8 @@ body {
 /* page-9-side */
 
 .thank-you-page {
-  height: 45vw;
-  width: 50vw;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   background-color: #fff;
   display: flex;
@@ -1391,7 +1413,7 @@ body {
 }
 
 /* ------------------- */
-
+/* 
 @media screen and (max-width: 1440px) {
 
   .thank-you-page,
@@ -1407,7 +1429,7 @@ body {
   }
 }
 
-/* Default (FHD - 1920x1080) */
+Default (FHD - 1920x1080)
 .logo h1,
 .info h2,
 .top-page-2 h1,
@@ -1457,7 +1479,7 @@ body {
   font-weight: 100;
 }
 
-/* 2K (2560x1440) */
+2K (2560x1440)
 @media screen and (min-width: 2000px) and (max-width: 3000px) {
 
   .logo h1,
@@ -1495,7 +1517,7 @@ body {
   }
 }
 
-/* 4K (3840x2160+) */
+4K (3840x2160+)
 @media screen and (min-width: 3001px) {
 
   .logo h1,
@@ -1533,7 +1555,7 @@ body {
   }
 }
 
-/* Tablet (768px to 1024px) */
+Tablet (768px to 1024px)
 @media screen and (max-width: 1024px) and (min-width: 768px) {
 
   .logo h1,
@@ -1571,7 +1593,7 @@ body {
   }
 }
 
-/* Mobile (up to 767px) */
+Mobile (up to 767px)
 @media screen and (max-width: 767px) {
 
   .logo h1,
@@ -1607,4 +1629,4 @@ body {
   .mid-left-txt-8 p {
     font-size: 12px;
   }
-}
+} 
