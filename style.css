@@ -2,8 +2,27 @@
   box-sizing: border-box;
 }
 
+@font-face{
+  font-family: 'Primary-font';
+  src: url(./Font/PlayfairDisplay-Medium.ttf)
+}
+@font-face{
+  font-family: 'Secondary-font';
+  src: url(./Font/Montserrat-Light.ttf)
+}
+
+@font-face{
+  font-family: 'secondary-2-font';
+  src: url(./Font/Montserrat-ExtraLight.ttf)
+}
+
+@font-face{
+  font-family: 'secondary-3-font';
+  src: url(./Font/Montserrat-Regular.ttf)
+}
+
 body {
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -147,6 +166,7 @@ body {
 }
 
 .logo h1 {
+  font-family: secondary-3-font;
   font-size: 12px;
   font-weight: 400;
   color: black;
@@ -155,12 +175,14 @@ body {
 }
 
 .info h2 {
+  font-family: secondary-3-font;
   text-align: center;
   font-size: 24px;
   font-weight: 400;
   color: black;
   margin: 0;
   padding: 0;
+  z-index: 9999;
 }
 
 /* -------------------- */
@@ -356,10 +378,11 @@ body {
 }
 
 .para-tit h2 {
+  font-family: Primary-font;
   margin: 0;
   text-align: left;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 300;
   color: white;
 }
 
@@ -383,6 +406,7 @@ body {
 }
 
 .top-page-2 h1 {
+  font-family: Primary-font;
   font-size: 24px;
   font-weight: 400;
   color: black;
@@ -449,6 +473,7 @@ body {
 }
 
 .left-txt h1 {
+  font-family: Primary-font;
   font-size: 24px;
   font-weight: 400;
   color: black;
@@ -591,6 +616,7 @@ body {
 }
 
 .right-txt-4 h1 {
+  font-family: Primary-font;
   font-size: 24px;
   font-weight: 400;
   color: black;
@@ -638,7 +664,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: px;
+  gap: 5px;
 }
 
 .txt-4 {
@@ -655,12 +681,14 @@ body {
 }
 
 .txt-4 h1 {
+  font-family: Primary-font;
   color: white;
   font-size: 14px;
   font-weight: 400;
 }
 
 .txt-4 h2 {
+  font-family: Primary-font;
   color: white;
   font-size: 24px;
   font-weight: 400;
@@ -730,6 +758,7 @@ body {
 }
 
 .top-page-txt-5 h1 {
+  font-family: Primary-font;
   font-size: 24px;
   font-weight: 400;
   color: black;
@@ -818,6 +847,7 @@ body {
 }
 
 .bottom-txt-5 h2 {
+  font-family: Primary-font;
   font-size: 24px;
   font-weight: 400;
   color: white;
@@ -894,6 +924,7 @@ body {
 }
 
 .right-txt-6 h1 {
+  font-family: Primary-font;
   font-size: 24px;
   font-weight: 400;
   color: black;
@@ -1040,6 +1071,7 @@ body {
 }
 
 .top-txt-6 h1 {
+  font-family: Primary-font;
   font-size: 24px;
   font-weight: 400;
   color: white;
@@ -1122,6 +1154,7 @@ body {
 }
 
 .top-txt-7 h1 {
+  font-family: Primary-font;
   font-size: 24px;
   font-weight: 400;
   color: white;
@@ -1216,6 +1249,7 @@ body {
 }
 
 .mid-left-txt-8 h1 {
+  font-family: Primary-font;
   font-size: 24px;
   font-weight: 400;
   color: black;
@@ -1317,6 +1351,7 @@ body {
 .disclaimer {
   text-align: center;
   font-size: 14px;
+  font-family: secondary-2-font;
   font-weight: 100;
   color: white;
   height: 10%;
@@ -1357,6 +1392,7 @@ body {
 }
 
 .top-txt-10 h1 {
+  font-family: Primary-font;
   font-size: 24px;
   font-weight: 400;
   color: white;
@@ -1391,6 +1427,7 @@ body {
 }
 
 .bottom-txt-10 h2 {
+  font-family: Primary-font;
   font-size: 24px;
   font-weight: 400;
   color: white;
@@ -1442,6 +1479,7 @@ body {
 
 
 .top-txt-10-R h1 {
+  font-family: Primary-font;
   font-size: 24px;
   font-weight: 400;
   color: black;
