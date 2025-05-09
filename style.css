@@ -271,6 +271,8 @@ body {
 }
 
 .right-txt-2 p {
+  font-family: Secondary-font;
+  line-height: 22px;
   padding: 0;
   margin: 0;
   text-align: justify;
@@ -348,7 +350,7 @@ body {
   /* flex: 1; */
   display: flex;
   justify-content: space-evenly;
-  padding: 30px;
+  padding: 14px;
   align-items: center;
 }
 
@@ -368,7 +370,7 @@ body {
 }
 
 .para-txt {
-  gap: 25px;
+  gap: 14px;
   display: flex;
   justify-content: space-evenly;
   align-content: center;
@@ -379,6 +381,7 @@ body {
 
 .para-tit h2 {
   font-family: Primary-font;
+  line-height: 22px;
   margin: 0;
   text-align: left;
   font-size: 24px;
@@ -387,6 +390,8 @@ body {
 }
 
 .para-txt p {
+  line-height: 22px;
+  font-family: Secondary-font;
   padding: 0;
   margin: 0;
   text-align: justify;
@@ -413,6 +418,8 @@ body {
 }
 
 .top-page-2 p {
+  line-height: 22px;
+  font-family: Secondary-font;
   padding: 0;
   margin: 0;
   text-align: justify;
@@ -481,6 +488,8 @@ body {
 }
 
 .left-txt p {
+  font-family: Secondary-font;
+  line-height: 22px;
   padding: 0;
   margin: 0;
   text-align: justify;
@@ -555,6 +564,7 @@ body {
 }
 
 .right-bottom-page-3 p {
+  font-family: Secondary-font;
   padding: 0;
   margin: 0;
   text-align: justify;
@@ -623,6 +633,8 @@ body {
 }
 
 .right-txt-4 p {
+  font-family: Secondary-font;
+  line-height: 22px;
   padding: 0;
   margin: 0;
   text-align: justify;
@@ -695,6 +707,8 @@ body {
 }
 
 .txt-4 p {
+  font-family: Secondary-font;
+  line-height: 22px;
   color: white;
   padding: 0;
   margin: 0;
@@ -766,6 +780,8 @@ body {
 }
 
 .top-page-txt-5 p {
+  font-family: Secondary-font;
+  line-height: 22px;
   padding: 0;
   margin: 0;
   text-align: justify;
@@ -855,6 +871,8 @@ body {
 }
 
 .bottom-txt-5 p {
+  font-family: Secondary-font;
+  line-height: 22px;
   padding: 0;
   margin: 0;
   text-align: justify;
@@ -932,6 +950,8 @@ body {
 }
 
 .right-txt-6 p {
+  font-family: Secondary-font;
+  line-height: 22px;
   text-align: justify;
   font-size: 14px;
   font-weight: 100;
@@ -1078,6 +1098,8 @@ body {
 }
 
 .top-txt-6 p {
+  font-family: Secondary-font;
+  line-height: 22px;
   padding: 0;
   margin: 0;
   text-align: justify;
@@ -1170,6 +1192,8 @@ body {
 }
 
 .top-txt-7 p {
+  font-family: Secondary-font;
+  line-height: 22px;
   padding: 0;
   margin: 0;
   text-align: justify;
@@ -1256,6 +1280,8 @@ body {
 }
 
 .mid-left-txt-8 p {
+  font-family: Secondary-font;
+  line-height: 22px;
   text-align: justify;
   font-size: 14px;
   font-weight: 100;
@@ -1399,6 +1425,8 @@ body {
 }
 
 .top-txt-10 p {
+  font-family: Secondary-font;
+  line-height: 22px;
   text-align: justify;
   font-size: 14px;
   font-weight: 100;
@@ -1434,6 +1462,8 @@ body {
 }
 
 .bottom-txt-10 p {
+  font-family: Secondary-font;
+  line-height: 22px;
   text-align: justify;
   font-size: 14px;
   font-weight: 100;
@@ -1486,6 +1516,8 @@ body {
 }
 
 .top-txt-10-R p {
+  font-family: Secondary-font;
+  line-height: 22px;
   text-align: justify;
   font-size: 14px;
   font-weight: 100;
