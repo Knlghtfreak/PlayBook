@@ -1486,8 +1486,9 @@ body {
 }
 
 .top-txt-10-R {
+  padding-bottom: 55px;
   width: 100%;
-  height: 30%;
+  height: 32%;
   /* background-image: url(./Asset/Page-2/BG-Half-White.png); */
   display: flex;
   justify-content: space-evenly;
