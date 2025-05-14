@@ -1743,12 +1743,12 @@
 
   .Mobarrow-left {
     left: 0;
-    /* display: none; */
+    display: none;
   }
 
   .Mobarrow-right {
     right: 0;
-    /* display: none; */
+    display: none;
   }
 
   /* -------------------page1------------- */

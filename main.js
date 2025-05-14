@@ -102,29 +102,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const mainSliderTrack = document.getElementById("MobsliderTrack");
-  const mainTotalSlides = 15;
-  let mainCurrentSlide = 0;
+// document.addEventListener("DOMContentLoaded", function () {
+//   const mainSliderTrack = document.getElementById("MobsliderTrack");
+//   const mainTotalSlides = 15;
+//   let mainCurrentSlide = 0;
 
-  function updateMainSlider() {
-    mainSliderTrack.style.transform = `translateX(-${mainCurrentSlide * 100}%)`;
-  }
+//   function updateMainSlider() {
+//     mainSliderTrack.style.transform = `translateX(-${mainCurrentSlide * 100}%)`;
+//   }
 
-  window.MobnextSlide = function () {
-    if (mainCurrentSlide < mainTotalSlides - 1) {
-      mainCurrentSlide++;
-      updateMainSlider();
-    }
-  };
+//   window.MobnextSlide = function () {
+//     if (mainCurrentSlide < mainTotalSlides - 1) {
+//       mainCurrentSlide++;
+//       updateMainSlider();
+//     }
+//   };
 
-  window.MobprevSlide = function () {
-    if (mainCurrentSlide > 0) {
-      mainCurrentSlide--;
-      updateMainSlider();
-    }
-  };
-});
+//   window.MobprevSlide = function () {
+//     if (mainCurrentSlide > 0) {
+//       mainCurrentSlide--;
+//       updateMainSlider();
+//     }
+//   };
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
   const mainSliderTrack = document.getElementById("MobsliderTrack");
