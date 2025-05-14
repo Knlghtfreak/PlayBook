@@ -2424,4 +2424,12 @@
     overflow: hidden;
     padding-bottom: 0;
   }
+
+  .Mob-banner14 img {
+    display: flex;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
