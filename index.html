@@ -8,228 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <script src="./main.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            /* font-family: Arial, sans-serif; */
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            touch-action: none;
-        }
-
-        .flipbook-container {
-            width: 1200px;
-            height: 700px;
-            position: relative;
-            perspective: 3000px;
-            max-width: 1200px;
-            max-height: 700px;
-            min-width: 800px;
-            min-height: 600px;
-        }
-
-        .flipbook {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            transform-style: preserve-3d;
-            position: relative;
-            translate: 15%;
-            transition: translate 1.3s ease;
-        }
-
-        .page {
-            position: absolute;
-            width: 850px;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: white;
-            /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); */
-            transform-origin: left center;
-            transform-style: preserve-3d;
-            transition: transform 1s ease;
-        }
-
-        .page .front,
-        .page .back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            overflow: hidden;
-        }
-
-        .page .back {
-            transform: rotateY(180deg);
-            background: #f9f9f9;
-        }
-
-        .page-content {
-            /* padding: 20px; */
-            width: 100%;
-            height: 100%;
-        }
-
-        .flipped {
-            transform: rotateY(-180deg);
-        }
-
-        .content-div {
-            width: 100%;
-            height: 100%;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.3s;
-        }
-
-        .content-div:hover {
-            transform: scale(1.02);
-        }
-
-        .content-div img {
-            width: 100%;
-            height: 80%;
-            object-fit: cover;
-        }
-
-        .content-div h3 {
-            margin-top: 10px;
-            color: #333;
-        }
-
-        .navigation {
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            z-index: 100;
-        }
-
-        #prev{
-            display: none;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            background: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #555;
-        }
-
-        .page-number {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 14px;
-            color: #555;
-        }
-
-        .cover-title {
-            font-size: 36px;
-            color: #333;
-            text-align: center;
-            margin-top: 40%;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .cover-subtitle {
-            font-size: 18px;
-            color: #666;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        /* Assign z-index to each page */
-        .page0 {
-            z-index: 10;
-        }
-
-        .page1 {
-            z-index: 9;
-        }
-
-        .page2 {
-            z-index: 8;
-        }
-
-        .page3 {
-            z-index: 7;
-        }
-
-        .page4 {
-            z-index: 6;
-        }
-
-        .page5 {
-            z-index: 4;
-        }
-
-        .page6 {
-            z-index: 3;
-        }
-
-        .page7 {
-            z-index: 2;
-        }
-
-        .page8 {
-            z-index: 1;
-        }
-
-
-        /* Fallback zoom control using transform scale */
-        #zoom-protection {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            z-index: 1000;
-        }
-
-        #zoom-content {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform-origin: center center;
-        }
     </style>
 </head>
+
 <body>
     <div id="zoom-protection">
         <div id="zoom-content">
@@ -695,6 +477,354 @@
         </div>
     </div>
 
+    <!-- Mobile -->
+
+    <div class="mobile-slider-container">
+        <button class="Mobarrow Mobarrow-left" onclick="MobprevSlide()">&#10094;</button>
+        <div class="Mobslider-track" id="MobsliderTrack">
+            <div class="Mob-slide page-1">
+                <div class="Mob-home-page-body">
+                    <div class="Mob-banner">
+                        <img src="./Asset/Home-PG/Banner.gif">
+                    </div>
+                    <div class="Mob-logo-and-info">
+                        <div class="Mob-logo">
+                            <img src="./Asset/Home-PG/Logo.png">
+                            <h1>A Residence That Embodies Opulence and Serenity</h1>
+                        </div>
+                        <div class="Mobinfo">
+                            <h2>3224 Amherst Avenue</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-2">
+                <div class="Mob-city-info-page">
+                    <div class="Mobpage1">
+                        <div class="Mob-top-txt-page1">
+                            <h1>Houston : A City That Feels Just Right</h1>
+                            <p>Imagine a city where urban energy meets small-town charm.
+                                In Houston, mornings begin with golden sunlight over tree-lined
+                                streets as families head to work, school, or leisure. Life moves
+                                at the perfect pace—offering endless opportunities while still feeling like home.
+                            </p>
+                        </div>
+                        <div class="Mob-mid-img-page1">
+                            <img src="./Asset/Page-2/Stockimg1.png">
+                            <img src="./Asset/Page-2/Stockimg3.png">
+                        </div>
+                        <div class="Mob-bot-txt-page1">
+                            <p>Houston’s weather is perfect for year-round activities. With warm winters and
+                                long
+                                summers, outdoor festivals and events take center stage throughout the year.
+                                Whether
+                                you're attending the Houston Livestock Show and Rodeo or enjoying one of the
+                                many
+                                music or food festivals, there’s always something exciting happening in
+                                Houston’s
+                                vibrant calendar of events.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-3">
+                <div class="Mob-city-info-page">
+                    <div class="Mobpage2">
+                        <div class="Mob-top-txt-page2">
+                            <h1>Discover Houston:<br>A City of Innovation<br>and Culture</h1>
+                            <p>Houston is more than just a great place to live—it’s a city of pioneers, dreamers,
+                                and innovators. Known as “Space City,” it’s home to NASA’s Johnson Space Center, a
+                                hub for groundbreaking space exploration.
+                            </p>
+                            <p>Beyond science, Houston thrives with creativity, from its vibrant arts scene to a
+                                food culture that rivals the best. With over 10,000 restaurants offering global
+                                flavors, every meal is an adventure in this dynamic city—it’s a city that invites
+                                you to be part of its story.
+                            </p>
+                        </div>
+                        <div class="Mob-mid-img-page2">
+                            <img src="./Asset/Page-2/Stockimg4.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-4">
+                <div class="Mob-city-info-page">
+                    <div class="Mobpage3">
+                        <div class="Mob-top-txt-page3">
+                            <h1>Experience the Best<br>
+                                of Houston: Prime<br>
+                                Location & Serene<br>
+                                Neighborhoods
+                            </h1>
+                            <p>Our properties are strategically located in some of Houston’s most prestigious
+                                and convenient neighborhoods, offering the perfect blend of urban accessibility
+                                and residential tranquility.
+                            </p>
+                        </div>
+                        <div class="Mob-mid-img-page3">
+                            <img src="./Asset/Page-3/Stockimg1.png">
+                            <img src="./Asset/Page-3/Stockimg2.png">
+                            <img src="./Asset/Page-3/Stockimg3.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-5">
+                <div class="Mob-city-info-page">
+                    <div class="Mobpage4">
+                        <div class="Mob-top-img-page4">
+                            <img src="./Asset/Page-3/map-MOB.png">
+                        </div>
+                        <div class="Mob-mid-txt-page4">
+                            <p>Whether you're seeking the vibrancy of city life or the tranquility of a serene
+                                neighborhood, our properties in prime areas such as Hunters Creek Village, Greater
+                                Uptown, and Larchmont offer the best of both worlds. Enjoy the convenience of urban
+                                amenities while living in peaceful, well-established communities. These neighborhoods
+                                provide a perfect balance of accessibility, comfort, and relaxation, making them ideal
+                                for work, leisure, and family living.|
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-6">
+                <div class="Mob-city-info-page">
+                    <div class="Mobpage5">
+                        <div class="Mob-top-txt-page5">
+                            <h1>Welcome Home</h1>
+                            <p>Welcome to a living space where comfort meets elegance. Designed with warmth and
+                                sophistication in mind, our living room invites you to unwind in a setting crafted for
+                                relaxation, connection, and timeless style.
+                            </p>
+                        </div>
+                        <div class="Mob-mid-img-page5">
+                            <img src="./Asset/Page-5/Stockimg1.png">
+                            <img src="./Asset/Page-5/Stockimg2.png">
+                            <img src="./Asset/Page-5/Stockgif.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-7">
+                <div class="Mob-city-info-page">
+                    <div class="Mobpage6">
+                        <div class="Mob-top-img-page6">
+                            <img src="./Asset/Page-5/Stockimg3mob.png">
+                        </div>
+                        <div class="Mob-mid-txt-page6">
+                            <h1>Classic & Cozy</h1>
+                            <p>The foyer entrance is one of the first things guests will notice as they step into your
+                                home. With its high ceilings and ample natural light, the space immediately feels open
+                                and inviting. The carefully chosen design elements blend seamlessly to create a warm,
+                                welcoming atmosphere. This area acts as an extension of your living room, offering both
+                                comfort and elegance. It’s a cozy, classic space that sets the tone for the rest of the
+                                home.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-8">
+                <div class="Mob-city-info-page">
+                    <div class="Mobpage7">
+                        <div class="Mob-top-img-page7">
+                            <img src="./Asset/Page-4/Stockimg1.png">
+                        </div>
+                        <div class="Mob-mid-txt-page7">
+                            <h1>Crafted to
+                                Perfection,<br>Built
+                                to Last
+                            </h1>
+                            <p>Our craftsmanship is a blend of precision, passion, and expertise. Using
+                                premium materials and time-honored techniques, we create pieces that are both durable
+                                and timeless.Every detail is meticulously crafted, ensuring quality, functionality, and
+                                elegance in every design.
+                            </p>
+                        </div>
+                        <div class="Mob-bot-img-page7">
+                            <img src="./Asset/Page-4/Stockimg2.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-9">
+                <div class="Mob-city-info-page">
+                    <div class="Mobpage8">
+                        <div class="Mob-top-img-page8">
+                            <img src="./Asset/Page-4/Stockimg3mob.png">
+                        </div>
+                        <div class="Mob-mid-txt-page8">
+                            <h1>We Don’t Sell Houses — </h1>
+                            <h2>We Deliver Experiences </h2>
+                            <p>Every house we build tells a story — of inspiration, detail, and thoughtful
+                                design. From the first sketch to the final detail, our mission is to shape spaces that
+                                resonate with emotion, purpose, and personality. With a deep-rooted passion for
+                                excellence and an eye for the extraordinary, we craft experiences that leave a lasting
+                                impression.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-10">
+                <div class="Mob-city-info-page">
+                    <div class="Mobpage9">
+                        <div class="Mob-top-img-page9">
+                            <img src="./Asset/Page-6/Stockimg1.png">
+                        </div>
+                        <div class="Mob-mid-txt-page9">
+                            <h1>A Culinary Haven
+                            </h1>
+                            <p>The heart of the Home, where flavors come alive and memories are made.
+                                Designed for elegance and functionality, this space is perfect for gourmet cooking,
+                                intimate meals, and lively gatherings.
+                            </p>
+                        </div>
+                        <div class="Mob-bot-img-page9">
+                            <img src="./Asset/Page-6/Stockimg2.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-11">
+                <div class="Mob-city-info-page">
+                    <div class="Mobpage10">
+                        <div class="Mob-top-txt-page10">
+                            <h1>Savor Every Moment</h1>
+                            <p>More than just a kitchen and dining space, this is where life happens. Designed
+                                with
+                                careful attention to detail, the space blends warmth, style, and functionality.
+                                Every
+                                element, from the seamless flow of the layout to the thoughtful placement of
+                                fixtures,
+                                ensures effortless cooking and memorable gatherings. Whether for gourmet meals,
+                                intimate
+                                dining, or lively get-togethers, this kitchen is built to create unforgettable
+                                experiences. It’s the heart of the home, where flavors come alive and cherished
+                                memories
+                                are made.
+                            </p>
+                        </div>
+                        <div class="Mob-mid-img-page10">
+                            <img src="./Asset/Page-6/Stockimg3mob.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-12">
+                <div class="Mob-city-info-page">
+                    <div class="Mobpage11">
+                        <div class="Mob-top-img-page11">
+                            <img src="./Asset/Page-7/Stockimg2.png">
+                        </div>
+                        <div class="Mob-mid-txt-page11">
+                            <h1>Rest, Reflect, & Recharge
+                            </h1>
+                            <p>A sanctuary of peace and productivity, the bedroom is designed to balance
+                                comfort and
+                                focus. It invites you to unwind and recharge, while the study offers a space for
+                                creativity and reflection. Every element enhances relaxation, with large windows
+                                bringing in natural light. Whether for restful sleep or focused work, our
+                                bedroom
+                                creates the ideal atmosphere for both. This harmonious blend of rest and
+                                inspiration
+                                fosters tranquility and productivity.
+                            </p>
+                        </div>
+                        <div class="Mob-bot-img-page11">
+                            <img src="./Asset/Page-7/Stockimg1.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-13">
+                <div class="Mob-city-info-page">
+                    <div class="Mobpage12">
+                        <div class="Mob-top-img-page12">
+                            <img src="./Asset/Page-8/Stockimg1.png">
+                        </div>
+                        <div class="Mob-mid-txt-page12">
+                            <h1>A Sanctuary for<br>Body and Soul
+                            </h1>
+                            <p>When you and your family need to freshen up, you'll enjoy the convenience of
+                                a bathroom with an updated vanity and toilet, as well as a mirror and shower.
+                            </p>
+                        </div>
+                        <div class="Mob-bot-img-page12">
+                            <img src="./Asset/Page-8/Stockimg2.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-14">
+                <div class="Mob-city-info-page">
+                    <div class="Mobpage13">
+                        <div class="Mob-top-txt-page13">
+                            <h1>Concierge Service
+                            </h1>
+                            <p>At Novel Signature Homes, we understand that purchasing a luxury home is just the
+                                beginning of your journey. Our exclusive Concierge Service, reserved for our
+                                valued
+                                buyers, is designed to provide seamless support as you settle into your new
+                                residence.
+                            </p>
+                        </div>
+                        <div class="Mob-mid-img-page13">
+                            <img src="./Asset/Page-10/Stockimg1.png">
+                        </div>
+                        <div class="Mob-bot-txt-page13">
+                            <h1>Comprehensive Support
+                            </h1>
+                            <p>Our commitment extends beyond the sale. From mortgage assistance to handyman
+                                services, we
+                                provide a range of solutions to make your homeownership experience as
+                                comfortable and
+                                enjoyable as possible. Our goal is to be your trusted partner, offering guidance
+                                and
+                                support whenever you need it.
+                            </p>
+                        </div>
+                        <div class="Mob-mid-img-page13">
+                            <img src="./Asset/Page-10/Stockimg3.jpg">
+                        </div>
+                        <div class="Mob-bot-txt-page13">
+                            <h1>Tailored to Your Lifestyle
+                            </h1>
+                            <p>We offer personalized assistance to cater to your unique needs and preferences,
+                                ensuring
+                                a smooth transition into your new home. Whether it's coordinating utility
+                                transfers,
+                                recommending trusted service providers, or addressing any post-purchase
+                                requirements,
+                                our dedicated team is here to help.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Mob-slide page-14">
+                <div class="Mob-home-page-body-cover">
+                    <div class="Mob-cover-page">
+                        <div class="Mob-banner">
+                            <img src="./Asset/Page-9/Stockimg1mob.png">
+                        </div>
+                        <div class="Mob-back-page">
+                            <div class="Mob-back-page14">
+                                <img src="./Asset/Home-PG/logo-white.png">
+                            </div>
+                            <div class="Mobinfo-page-14">
+                                <h1>Not intended to solicit Sellers or <br>Buyers currently under written contract
+                                    with another Realtor®.</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="Mobarrow Mobarrow-right" onclick="MobnextSlide()">&#10095;</button>
+    </div>
 </body>
 
 </html>

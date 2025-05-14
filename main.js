@@ -95,3 +95,75 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(counterZoom, 100);
   counterZoom();
 });
+
+
+
+// -----------------------------------------------------------//
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const mainSliderTrack = document.getElementById("MobsliderTrack");
+  const mainTotalSlides = 15;
+  let mainCurrentSlide = 0;
+
+  function updateMainSlider() {
+    mainSliderTrack.style.transform = `translateX(-${mainCurrentSlide * 100}%)`;
+  }
+
+  window.MobnextSlide = function () {
+    if (mainCurrentSlide < mainTotalSlides - 1) {
+      mainCurrentSlide++;
+      updateMainSlider();
+    }
+  };
+
+  window.MobprevSlide = function () {
+    if (mainCurrentSlide > 0) {
+      mainCurrentSlide--;
+      updateMainSlider();
+    }
+  };
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const mainSliderTrack = document.getElementById("MobsliderTrack");
+  const mainTotalSlides = 15;
+  let mainCurrentSlide = 0;
+
+  function updateMainSlider() {
+    mainSliderTrack.style.transform = `translateX(-${mainCurrentSlide * 100}%)`;
+  }
+
+  let startX = 0;
+  let endX = 0;
+
+  mainSliderTrack.addEventListener("touchstart", function (e) {
+    startX = e.touches[0].clientX;
+  });
+
+  mainSliderTrack.addEventListener("touchend", function (e) {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const swipeDistance = endX - startX;
+    const threshold = 50; // Minimum swipe distance to trigger
+
+    if (swipeDistance > threshold && mainCurrentSlide > 0) {
+      mainCurrentSlide--;
+      updateMainSlider();
+    } else if (swipeDistance < -threshold && mainCurrentSlide < mainTotalSlides - 1) {
+      mainCurrentSlide++;
+      updateMainSlider();
+    }
+  }
+
+  updateMainSlider(); // Initialize position
+});
+
+
+
+
+
